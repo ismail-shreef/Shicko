@@ -1,0 +1,647 @@
+:root{
+    --bg-page:#EBD5AB;
+    --bg-header:#1B211A;
+    --bg-butten:#628141;
+    --color-h:#8BAE66;
+    --color-logo:#AEB784;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--bg-page);
+    font-family: 'Poppins' !important;
+}
+@media (min-width: 768px) {
+  /* 🔷 WRAPPER */
+.main-header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+}
+
+
+/* منع أي مسافات */
+body{
+    margin: 0;
+}
+
+/* 🔷 HEADER */
+header{
+    width:100%;
+    background-color: var(--bg-header);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 15px;
+}
+
+/* logo */
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img{
+    width:60px;
+    height:60px;
+    border-radius:10px;
+}
+
+.logo h1{
+    font-size:30px;
+    font-weight: 800;
+    color: var(--color-logo);
+}
+
+/* right side */
+.header-right{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+/* 🔷 NAVBAR */
+/* .navbar{
+    background-color: var(--bg-header);
+    border-top: 2px solid var(--color-logo);
+} */
+
+.nav-link{
+    color: var(--color-logo) !important;
+    font-weight: bold;
+}
+
+.nav-link:hover{
+    color: var(--bg-butten) !important;
+}
+
+/* toggler */
+.navbar-toggler{
+    border: 2px solid var(--color-logo) !important;
+    background-color: var(--bg-page)!important;
+    border-radius: 5px;
+}
+
+.navbar-toggler-icon{
+    color: var(--bg-header);
+}
+
+/* nav icons animation */
+.nav-icons a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    background-color: var(--bg-page);
+    color: var(--bg-header);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: 0.3s;
+
+    opacity: 0;
+    transform: scale(0);
+    animation: fadeInScale 0.5s forwards;
+}
+
+.nav-icons a:nth-child(1){animation-delay:0.1s;}
+.nav-icons a:nth-child(2){animation-delay:0.2s;}
+.nav-icons a:nth-child(3){animation-delay:0.3s;}
+.nav-icons a:nth-child(4){animation-delay:0.4s;}
+.nav-icons a:nth-child(5){animation-delay:0.5s;}
+
+.nav-icons a:hover{
+    transform: translateY(-5px) rotate(-10deg);
+    background-color: var(--color-logo);
+    color: var(--bg-page);
+}
+
+@keyframes fadeInScale{
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* 📱 responsive */
+@media (max-width:768px){
+
+    header{
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .header-right{
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .search-input{
+        width: 120px;
+    }
+}
+
+/* 🔶 Announcement Bar */
+.announcement-bar {
+    background: linear-gradient(45deg, #8B4513, #A0522D);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* حركة النص */
+.marquee {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marqueeMove 20s linear infinite;
+}
+
+@keyframes marqueeMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+/* 🔷 LANDING */
+.landing {
+    position: relative;
+    height: 100vh;
+    background: url('landing.jpg') no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🔶 Overlay */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* 🔷 Content */
+.content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* ✨ Animation */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title */
+.content h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: fadeUp 1.5s ease-out;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
+/* Text */
+.content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    animation: fadeUp 1.5s ease-out;
+    animation-delay: 0.8s;
+    animation-fill-mode: both;
+}
+
+/* Button */
+.btn-shop {
+    display: inline-block;
+    background: #8B4513;
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    animation: fadeUp 1.5s ease-out;
+    animation-delay: 1.3s;
+    animation-fill-mode: both;
+}
+
+.btn-shop:hover {
+    background: #5D2F0F;
+    transform: scale(1.05);
+}
+
+
+/* 🔷 Section */
+.new-arrivals {
+    background: var(--bg-page);
+    padding: 60px 0;
+}
+
+.section-title {
+    color: var(--color-h);
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+/* 🔶 Card */
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Image */
+.product-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-img img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+/* Zoom on hover */
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Discount */
+.discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Stock */
+.stock {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.stock.in {
+    background: green;
+}
+
+.stock.out {
+    background: gray;
+}
+
+/* 🔶 Overlay */
+.overlay-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: 0.3s;
+}
+
+/* Button inside overlay */
+.view-btn {
+    background: var(--bg-butten);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transform: translateY(20px);
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.product-card:hover .overlay-btn {
+    opacity: 1;
+}
+
+.product-card:hover .view-btn {
+    transform: translateY(0);
+}
+
+/* Info */
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-info h5 {
+    color: var(--bg-header);
+    margin-bottom: 10px;
+}
+
+/* Price */
+.price {
+    margin-bottom: 10px;
+}
+
+.new-price {
+    color: var(--bg-butten);
+    font-weight: bold;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 10px;
+}
+
+/* Colors */
+.colors {
+    margin: 10px 0;
+}
+
+.colors span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 3px;
+    border: 1px solid #ccc;
+}
+
+/* Button */
+.btn-add {
+    background: var(--bg-butten);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    background: var(--color-h);
+}
+
+.btn-add.disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+/* 🔷 FOOTER */
+.footer {
+    background: #1B211A;
+    color: #EBD5AB;
+    padding: 50px 0 20px;
+}
+
+.footer h5,
+.footer-logo {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #EBD5AB;
+    padding-left: 5px;
+}
+
+/* social */
+.footer-social {
+    margin-top: 15px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    background: #2c332a;
+    color: #EBD5AB;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    background: #EBD5AB;
+    color: #1B211A;
+}
+
+/* subscribe */
+.subscribe-form {
+    display: flex;
+    margin-top: 10px;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.subscribe-form button {
+    background: #EBD5AB;
+    color: #1B211A;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.subscribe-form button:hover {
+    background: #d6be91;
+}
+
+/* bottom */
+.footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #aaa;
+}
+/* 🔷 MOBILE NAVBAR */
+.mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+    background: #1B211A;
+    border-top: 1px solid #333;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 8px 0;
+    z-index: 999;
+}
+
+/* items */
+.mobile-nav .nav-item {
+    text-align: center;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 12px;
+    position: relative;
+}
+
+.mobile-nav .nav-item i {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+
+/* active */
+.mobile-nav .nav-item.active {
+    color: #EBD5AB;
+}
+
+/* hover */
+.mobile-nav .nav-item:hover {
+    color: #EBD5AB;
+}
+
+/* cart badge */
+.mobile-nav .cart .badge {
+    position: absolute;
+    top: -3px;
+    right: 10px;
+
+    background: red;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+/* 🔻 يظهر فقط في الموبايل */
+@media (min-width: 768px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
+/* الألوان الرسمية للمنصات */
+:root {
+    --fb-color: #1877F2;
+    --ig-color: #E4405F;
+    --wa-color: #25D366;
+    --ph-color: #343a40;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* ظل بسيط */
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    height: 100%;
+}
+
+.card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #444;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* تأثير الهوفر */
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    background-color: #fff;
+}
+
+/* ألوان الأيقونات */
+.facebook .card-icon { color: var(--fb-color); }
+.instagram .card-icon { color: var(--ig-color); }
+.whatsapp .card-icon { color: var(--wa-color); }
+.phone .card-icon { color: var(--ph-color); }
+
+/* تفاعل بسيط للهوفر على الأيقونة */
+.contact-card:hover .card-icon {
+    transform: scale(1.1);
+}
+
+/* تنسيق متوافق مع الاتجاه من اليمين لليسار للموقع العام ولكن الكروت تظل انجليزية */
+[dir="rtl"] .contact-card {
+    direction: ltr;
+}
